@@ -6,16 +6,17 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
+@Getter
 @Entity(name = "board")
 public class Board extends BaseTimeEntity {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
-
     private String title;
     private String contents;
     private String useYn;
@@ -23,7 +24,7 @@ public class Board extends BaseTimeEntity {
     private Long modifyId;
 
     @Builder
-    public Board(Board board) {
+    public Board(Long id, String title, String contents, String useYn, Long registerId, Long modifyId) {
         this.id = id;
         this.title = title;
         this.contents = contents;

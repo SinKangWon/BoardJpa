@@ -17,5 +17,5 @@ public interface BoardRepository extends JpaRepository<Board, Long> {
     @Transactional
     @Modifying
     @Query(value = updateBoardQuery, nativeQuery = true)
-    public int updateBoard(@Param("requestDto") RequestDTO requestDto);
+    public int updateBoard(@Param("requestDto") RequestDto requestDto);
 }
